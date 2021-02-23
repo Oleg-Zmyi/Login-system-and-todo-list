@@ -52,14 +52,21 @@ try {
     <title>Document</title>
 </head>
 <body>
-<?php require_once './header.php'?>
+<header>
+    <?php
+    if ($_SESSION['user'][0]['name']) : ?>
+        <p>Hi, <?= $_SESSION['user'][0]['name']; ?></p>
+        <p><a href="logout.php">sign out</a></p>
+    <?php else: ?>
+        <p>Hi, Guest</p>
+    <?php endif; ?>
+</header>
 
 <form action="" method="post">
     <p>Registration</p>
     <input type="text" name="name" placeholder="Enter your name">
     <input type="email" name="email" placeholder="Enter email">
     <input type="password" name="pass" placeholder="Enter password" autocomplete="off">
-<!--    <input type="password" name="pass2"  placeholder="confirm password" autocomplete="off">-->
     <button type="submit">To register</button>
         <p>Already have an account? Follow the link for <a href="login.php">sign in</a></p>
     <?php if (!empty($message)) : ?>
