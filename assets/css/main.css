@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 0px;
+}
+body{
+    text-align: center;
+    padding-top: 100px;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto;
+    padding: 30px 20px;
+}
+
+input
+{
+    outline: none;
+    margin: 10px 0;
+    padding: 6px;
+    border-bottom: 1px solid cadetblue;
+}
+button{
+    margin: 10px 0 20px;
+    padding: 6px;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.error {
+    border: 1px solid brown;
+    padding: 10px;
+}
+.list{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.list li {
+    display: flex;
+    margin: 24px 0;
+    justify-content: space-between;
+    position: relative;
+}
+.task {
+    width: 100%;
+    text-align: left;
+}
+.list a {
+    width: 90px;
+    padding: 10px 20px;
+}
+.to_do:before{
+    content: 'done';
+    font-size: 24px;
+    color: brown;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+.to_do p{
+    opacity: .5;
+}
