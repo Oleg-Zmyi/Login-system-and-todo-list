@@ -14,7 +14,7 @@ if (isset($_GET['id']) && isset($_GET['list_id']) && isset($_GET['done'])) {
         $listId = $_GET['list_id'];
         header("Location:  ./list.php?id=$listId");
     } catch (Exception $exception) {
-        $exception->getMessage();
+        echo $exception->getMessage();
     }
 } else {
     header("Location:  ./list.php");

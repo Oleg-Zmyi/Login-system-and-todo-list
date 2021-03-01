@@ -14,7 +14,7 @@ try {
     $sth->execute([':email' => $email]);
     $isTasks = $sth->fetchAll(\PDO::FETCH_ASSOC);
 } catch (Exception $exception) {
-    $exception->getMessage();
+    echo $exception->getMessage();
 }
 
 //Check if there is lists of current user
@@ -24,7 +24,7 @@ $sth = $pdo->prepare($sql);
 $sth->execute([':currentUserId' => $currentUserID]);
 $isLists = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $exception) {
-    $exception->getMessage();
+    echo $exception->getMessage();
 }
 ?>
 <!doctype html>
@@ -79,7 +79,7 @@ $isLists = $sth->fetchAll(PDO::FETCH_ASSOC);
             <p>You don't have any lists yet!</p>
         <?php endif; ?>
     <?php } catch (Exception $exception) {
-        $exception->getMessage();
+        echo $exception->getMessage();
     } ?>
 </main>
 </body>

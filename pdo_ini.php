@@ -12,8 +12,9 @@ try {
         $config['user'],
         $config['pass']
     );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $exception) {
-    $exception->getMessage();
+    echo $exception->getMessage();
 }
 
 $sth = $pdo->prepare("CREATE TABLE IF NOT EXISTS `users` (

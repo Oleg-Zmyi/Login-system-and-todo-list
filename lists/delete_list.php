@@ -9,7 +9,7 @@ if ($_GET['id']) {
         $stmt = $pdo->prepare($sql);
         $stmt->execute($params);
     } catch (Exception $exception) {
-        $exception->getMessage();
+        echo $exception->getMessage();
     }
 };
     // delete list
@@ -19,7 +19,7 @@ if ($_GET['id']) {
         $stmt = $pdo->prepare($sql);
         $stmt->execute($params);
     } catch (Exception $exception){
-        $exception->getMessage();
+        echo $exception->getMessage();
     };
 
 header("Location:  ../index.php");

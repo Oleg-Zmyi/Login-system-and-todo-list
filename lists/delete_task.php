@@ -10,7 +10,7 @@ if ($_GET['id'] && $_GET['list_id'] ) {
         $listId = $_GET['list_id'];
         header("Location:  ./list.php?id=$listId");
     } catch (Exception $exception) {
-        $exception->getMessage();
+        echo $exception->getMessage();
     }
 } else {
     header("Location:  ./list.php");

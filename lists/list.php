@@ -30,7 +30,7 @@ try {
     $sth->execute([':listId' => $listId]);
     $listTitle = $sth->fetch(PDO::FETCH_ASSOC);
 } catch (Exception $exception) {
-    $exception->getMessage();
+    echo $exception->getMessage();
 }
 
 //get all tasks from this list
@@ -41,7 +41,7 @@ try {
     $sth->execute([':currentListId' => $currentListID]);
     $lists = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $exception) {
-    $exception->getMessage();
+    echo $exception->getMessage();
 }
 ?>
 

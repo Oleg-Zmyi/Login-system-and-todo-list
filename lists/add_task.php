@@ -38,7 +38,7 @@ if (!empty($_POST['list_id']) && !empty($_POST['task'])) {
             header("Location:  ./list.php?id=$currentListId");
         }
     } catch (Exception $exception) {
-        $exception->getMessage();
+        echo $exception->getMessage();
     }
 }
 

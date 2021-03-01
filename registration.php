@@ -13,10 +13,10 @@ try {
     $sth->execute(['email' => $email]);
     $isUser = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $exception) {
-    $exception->getMessage();
+    echo $exception->getMessage();
 }
     if ($isUser[0]['count']){
-        $message = 'Користувач з такою електронною адресою вже існує';
+        $message = 'User with the same name already exists';
     } else {
         try {
             $sql = "INSERT INTO `users` (name, email, pass) VALUES (:name, :email, :pass)";
@@ -36,7 +36,7 @@ try {
             $_SESSION['user'] = $user;
             header('Location: index.php');
         } catch (Exception $exception) {
-            $exception->getMessage();
+            echo $exception->getMessage();
         }
     }
 } ?>

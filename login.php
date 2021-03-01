@@ -20,7 +20,7 @@ if ($_POST["email"] && $_POST["pass"]){
             $message = 'Email or password is incorrect';
         }
     } catch (Exception $exception) {
-        $exception->getMessage();
+        echo $exception->getMessage();
     }
 }
 ?>
